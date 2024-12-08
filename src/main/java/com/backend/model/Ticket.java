@@ -7,23 +7,32 @@ import java.math.BigDecimal;
 @Entity
 public class Ticket {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ticketID;//primary key
+    private int ticketID;//primary key
+    private String eventName;
     private BigDecimal price;
     private String releaseDate;
 
     public Ticket() {}
 
-    public Ticket(BigDecimal price, String releaseDate) {
+    public Ticket(int ticketID, BigDecimal price, String releaseDate) {
+        this.eventName = eventName;
         this.price = price;
         this.releaseDate = releaseDate;
     }
 
-    public Long getTicketID() {
+    public int getTicketID() {
         return ticketID;
     }
-    public void setTicketID(Long ticketID) {
+    public void setTicketID(int ticketID) {
         this.ticketID = ticketID;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName){
+        this.eventName = eventName;
     }
 
     public BigDecimal getPrice(){

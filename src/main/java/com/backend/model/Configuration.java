@@ -3,6 +3,7 @@ package com.backend.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table
 public class Configuration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
