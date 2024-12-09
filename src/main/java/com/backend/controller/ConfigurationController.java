@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.backend.model.Configuration;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 @RequestMapping(path = "api/v1/configuration")
 public class ConfigurationController {
@@ -28,6 +29,7 @@ public class ConfigurationController {
     public void addConfiguration(@RequestBody Configuration configuration){
         configurationService.saveConfiguration(configuration);
     }
+
 
 
 }
