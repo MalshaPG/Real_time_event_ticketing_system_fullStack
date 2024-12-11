@@ -1,0 +1,42 @@
+body {
+  background-color: #f8f9fa;
+}
+  
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #007bff;
+  font-weight: bold;
+}
+
+h3 {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+}
+
+.Ticket{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+  
+  
