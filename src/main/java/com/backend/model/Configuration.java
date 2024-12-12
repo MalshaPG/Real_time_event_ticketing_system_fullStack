@@ -13,6 +13,14 @@ public class Configuration {
     private int customerRetrievalRate;
     private int maxTicketCapacity;
 
+    /**
+     * Constructor
+     *
+     * @param totalTickets Number of tickets a vendor can add to the ticket pool at a time.
+     * @param ticketReleaseRate How frequently vendors add tickets.
+     * @param customerRetrievalRate How often customers purchase tickets.
+     * @param maxTicketCapacity Maximum ticket capacity of the ticket pool.
+     */
     public Configuration(int totalTickets, int ticketReleaseRate, int customerRetrievalRate, int maxTicketCapacity){
         this.totalTickets = totalTickets;
         this.ticketReleaseRate = ticketReleaseRate;
@@ -20,8 +28,10 @@ public class Configuration {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    //No argument constructor required for Java Persistence API(JPA)
     public Configuration(){}
 
+    //Getters and Setters
     public Long getConfigId() {
         return configId;
     }
@@ -62,6 +72,9 @@ public class Configuration {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    /**
+     * @return configuration data as a String
+     */
     @Override
     public String toString() {
         return "Configuration{" +

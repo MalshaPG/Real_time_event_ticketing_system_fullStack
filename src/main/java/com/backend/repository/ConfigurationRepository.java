@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ConfigurationRepository extends JpaRepository<Configuration, Long> {
+    //Jpa repository provides save(), findAll(), findById() operations
 }
 
 

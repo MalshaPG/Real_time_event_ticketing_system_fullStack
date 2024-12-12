@@ -7,24 +7,29 @@ import org.springframework.web.bind.annotation.*;
 import com.backend.model.Configuration;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5174")
-@RestController
+//Allow cross-origin request from the React front-end
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController //Handle HTTP requests
 @RequestMapping(path = "api/v1/configuration")
 public class ConfigurationController {
+    //Dependency injection of configurationService
     @Autowired
     private final ConfigurationService configurationService;
 
     @Autowired
     public ConfigurationController(ConfigurationService configurationservice) {
+        //Assign the injection configuration service to the class member
         this.configurationService = configurationservice;
     }
-    //rest end point
+
+    //Rest end points
+    //Retrieve all the configurations from the database
     @GetMapping()
     public List<com.backend.model.Configuration> configPrint(){
         return configurationService.configPrint();
     }
 
-    //add new resources to the system(new configuration)
+    //Add new resources to the system(new configuration)
     @PostMapping
     public void addConfiguration(@RequestBody Configuration configuration){
         configurationService.saveConfiguration(configuration);

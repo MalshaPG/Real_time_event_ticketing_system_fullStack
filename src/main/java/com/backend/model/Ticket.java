@@ -5,21 +5,32 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class Ticket {
+public class Ticket{
     @Id
-    private int ticketID;//primary key
-    private String eventName;
+    private int ticketID;
     private BigDecimal price;
+    private String event;
     private String releaseDate;
 
-    public Ticket() {}
+    //Empty constructor required for JPA
+    public Ticket(){}
 
-    public Ticket(int ticketID, BigDecimal price, String releaseDate) {
-        this.eventName = eventName;
+    /**
+     * Constructor
+     *
+     * @param ticketID The unique identifying number of a ticket
+     * @param event The event associated with the ticket
+     * @param price The price of the ticket
+     * @param releaseDate The release date of the ticket
+     */
+    public Ticket(int ticketID,String event, BigDecimal price, String releaseDate) {
+        this.ticketID = ticketID;
+        this.event = event;
         this.price = price;
         this.releaseDate = releaseDate;
     }
 
+    //Getters and Setters
     public int getTicketID() {
         return ticketID;
     }
@@ -27,12 +38,12 @@ public class Ticket {
         this.ticketID = ticketID;
     }
 
-    public String getEventName() {
-        return eventName;
+    public String getEvent() {
+        return event;
     }
 
-    public void setEventName(String eventName){
-        this.eventName = eventName;
+    public void setEvent(String event) {
+        this.event = event;
     }
 
     public BigDecimal getPrice(){
@@ -51,12 +62,17 @@ public class Ticket {
         this.releaseDate = releaseDate;
     }
 
+    /**
+     * @return The Ticket as a String
+     */
     @Override
     public String toString() {
         return "Ticket{" +
                 "ticketID=" + ticketID +
                 ", price=" + price +
+                ", event=" + event +
                 ", releaseDate=" + releaseDate +
                 '}';
     }
 }
+

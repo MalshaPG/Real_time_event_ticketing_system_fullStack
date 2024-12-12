@@ -16,12 +16,20 @@ public class ConfigurationService {
         this.configurationRepository = configurationRepository;
     }
 
-    //add configuration
+    //Add new configuration to the database
     public Configuration saveConfiguration(Configuration configuration) {
         return configurationRepository.save(configuration);
     }
 
+    //Retrieve all configurations
     public List<Configuration> configPrint() {
         return configurationRepository.findAll();
     }
+
+    //Retrieve the latest configuration
+    public Configuration getLatestConfiguration() {
+        return configurationRepository.findAll().get(0);
+    }
+
+
 }
